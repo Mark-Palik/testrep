@@ -9,8 +9,8 @@ public class Main {
         for (int value : arr) {
             System.out.print(value + " ");
         }
-	System.out.println();
-	BubbleSort();
+        System.out.println();
+        revArray(arr);
     }
     static void InsertionSort(int[] arr)
     {
@@ -29,5 +29,29 @@ public class Main {
     static void BubbleSort()
     {
         System.out.println("hello");
+    }
+    static void ReverseString(String str)
+    {
+        char[] buffarr = new char[str.length()];
+        for(int i =0;i<str.length();i++)
+        {
+            buffarr[i] = str.charAt(str.length()-1-i);
+        }
+        String revStr = new String(buffarr);
+        System.out.println(revStr);
+    }
+    static void revArray(int[] A)
+    {
+        for (int i=0;i<A.length/2;i++)
+        {
+            int tmp=0;
+            tmp=A[A.length-i-1];
+            A[A.length-i-1] = A[i];
+            A[i] = tmp;
+        }
+        for(int i : A)
+        {
+            System.out.print(i + " ");
+        }
     }
 }
